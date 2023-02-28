@@ -46,7 +46,6 @@ export default function Navbar() {
 						<Link href="/about">About</Link>
 						<Link href="/buy">Buy Token</Link>
 						<Link href="/market">Market</Link>
-						<Link href="/vote">Vote</Link>
 					  </>
 					)}
 

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import {
   Box,
+  Card,
   Container,
   Stack,
   Text,
@@ -14,6 +15,8 @@ import ContractCallVote from "../components/ContractCallVote";
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/Footer";
+import VoteCard from "../components/VoteCard";
+import TEST from "../public/test.png";
 
 export default function Home() {
   return (
@@ -32,7 +35,7 @@ export default function Home() {
 
         <br /><br />< br/><br /><br />
 
-        <h1 className={styles.title}>BTC Predicition Market 💸</h1>
+        <h1 className={styles.title}>BTC Prediction Market 💸</h1>
 
         <div>
           <ContractCallVote />
@@ -41,50 +44,84 @@ export default function Home() {
         <h2>Stacks Resources</h2>
 
         <div className={`${styles.grid} ${styles.alt}`}>
-          <a
+          <Card
             href="https://github.com/hirosystems/stacks.js"
             className={styles.card}
           >
             <h2>GitHub &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>Read up on example code in the Stacks.js Repository.</p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
 
-          <a href="https://docs.hiro.so" className={styles.card}>
+          <Card href="https://docs.hiro.so" className={styles.card}>
             <h2>Hiro Docs &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>Visit the general Hiro Docs page for more information.</p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
         </div>
 
-        <h2>Next.js Resources</h2>
-
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <Card href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
+          <Card href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
 
-          <a
+          <Card
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
           >
             <h2>Examples &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
 
-          <a
+          <Card
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
             <h2>Deploy &rarr;</h2>
+            <br />
+            <Image src={TEST} alt="logo" width={480} height={480}></Image>
+            <br />
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
-          </a>
+            <br />
+            <ContractCallVote />
+            <br />
+          </Card>
         </div>
       </main>
 
