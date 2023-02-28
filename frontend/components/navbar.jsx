@@ -9,16 +9,17 @@ import {
 	useColorMode,
   } from "@chakra-ui/react";
 import Image from "next/image";
+import React from "react";
 import { useRouter } from "next/router";
-import ConnectWallet from "../components/ConnectWallet";
-import ContractCallVote from "../components/ContractCallVote";
-import styles from "../styles/Home.module.css";
+import ConnectWallet from "./ConnectWallet";
+// import styles from "../styles/Home.module.css";
 
 export default function Navbar() {
 	const router = useRouter();
 
 	return (
 			<Box
+			gap={2}
 			  bg={useColorModeValue("gray.100", "gray.900")}
 			  px={4}
 			  marginBottom={20}
@@ -46,12 +47,13 @@ export default function Navbar() {
 						<Link href="/about">About</Link>
 						<Link href="/buy">Buy Token</Link>
 						<Link href="/market">Market</Link>
+						<Link href="/vote">Vote</Link>
 					  </>
 					)}
 
 					<Box px={20}>
 						<Menu>
-							<div className={styles.components}>
+							<div >
 							{/* ConnectWallet file: `../components/ConnectWallet.js` */}
 								<ConnectWallet />
 							{/* ContractCallVote file: `../components/ContractCallVote.js` */}

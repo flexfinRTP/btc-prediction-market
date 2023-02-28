@@ -1,6 +1,18 @@
 [project]
-name = "clarity-hello-world"
+name = "btc-vote"
 requirements = []
+[contracts.btc-vote]
+path = "contracts/btc-vote.clar"
+depends_on = []
+
 [contracts.hello-world]
 path = "contracts/hello-world.clar"
+depends_on = []
+
+[contracts.predict-market]
+path = "contracts/predict-market.clar"
+depends_on = []
+
+[contracts.vote-token]
+path = "contracts/vote-token.clar"
 depends_on = []

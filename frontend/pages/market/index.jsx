@@ -10,15 +10,13 @@ import {
   Button,
   useColorModeValue,
 } from '@chakra-ui/react';
-import ConnectWallet from "../components/ConnectWallet";
-import ContractCallVote from "../components/ContractCallVote";
-import styles from "../styles/Home.module.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/Footer";
-import VoteCard from "../components/VoteCard";
-import TEST from "../public/test.png";
+import ContractCallVote from "../../components/ContractCallVote";
+import styles from "../../styles/Home.module.css";
+import Navbar from "../../components/navbar";
+import Footer from "../../components/Footer";
+import TEST from "../../public/test.png";
 
-export default function Home() {
+export default function Market() {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,33 +35,31 @@ export default function Home() {
 
         <h1 className={styles.title}>BTC Prediction Market 💸</h1>
 
-        <div>
-          <ContractCallVote />
-        </div>
+        <h2>The Market</h2>
 
-        <h2>Stacks Resources</h2>
+        <p>Vote Yes or No with your $BBET tokens!</p>
 
         <div className={`${styles.grid} ${styles.alt}`}>
           <Card
             href="https://github.com/hirosystems/stacks.js"
             className={styles.card}
           >
-            <h2>GitHub &rarr;</h2>
+            <h2>U.S. President &rarr;</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
-            <p>Read up on example code in the Stacks.js Repository.</p>
+            <p>Who will win the 2024 United States Presidential Election?</p>
             <br />
             <ContractCallVote />
             <br />
           </Card>
 
           <Card href="https://docs.hiro.so" className={styles.card}>
-            <h2>Hiro Docs &rarr;</h2>
+            <h2>S&P 500 &rarr;</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
-            <p>Visit the general Hiro Docs page for more information.</p>
+            <p>Will the S&P 500 index reach a new all-time high by the end of July 2023?</p>
             <br />
             <ContractCallVote />
             <br />
@@ -72,22 +68,22 @@ export default function Home() {
 
         <div className={styles.grid}>
           <Card href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
+            <h2>Crude Oil &rarr;</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
-            <p>Find in-depth information about Next.js features and API.</p>
+            <p>Will the price of crude oil reach $100 per barrel by end of year, 2023?</p>
             <br />
             <ContractCallVote />
             <br />
           </Card>
 
           <Card href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
+            <h2>Bitcoin &rarr;</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <p>Will the price of Bitcoin exceed $100,000 by June 2023?</p>
             <br />
             <ContractCallVote />
             <br />
@@ -97,11 +93,11 @@ export default function Home() {
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}
           >
-            <h2>Examples &rarr;</h2>
+            <h2>Quantum Computing</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <p>Will a major tech company announce a breakthrough in quantum computing by May 2023?</p>
             <br />
             <ContractCallVote />
             <br />
@@ -111,12 +107,12 @@ export default function Home() {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Electric Vehicles</h2>
             <br />
             <Image src={TEST} alt="logo" width={480} height={480}></Image>
             <br />
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Will the number of electric cars sold worldwide exceed 10 million in 2023?
             </p>
             <br />
             <ContractCallVote />

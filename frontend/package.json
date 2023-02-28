@@ -14,13 +14,17 @@
     "@stacks/connect-react": "^21.0.1",
     "@stacks/network": "^6.1.0",
     "@stacks/transactions": "^6.1.0",
+    "micro-stacks": "^1.1.4",
     "next": "^12.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "zustand": "^4.3.4"
   },
   "devDependencies": {
+    "@types/react": "18.0.28",
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "tailwindcss": "^3.2.7"
   }
 }
