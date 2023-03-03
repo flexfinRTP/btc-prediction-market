@@ -11,7 +11,8 @@ import {
   callReadOnlyFunction,
   makeStandardSTXPostCondition,
   FungibleConditionCode,
-  listCV
+  listCV,
+  tupleCV
 } from "@stacks/transactions";
 import {
   Box,
@@ -24,6 +25,8 @@ import {
 } from '@chakra-ui/react';
 import { userSession } from "./ConnectWallet";
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
+import { intCV, principalCV, stringAsciiCV, stringCV } from "micro-stacks/clarity";
+import { readUInt8, writeUInt32BE, writeUInt8 } from "micro-stacks/common";
 
 const ContractCallVote = () => {
   const { doContractCall } = useConnect();
@@ -32,55 +35,55 @@ const ContractCallVote = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  // function vote(pick) {
-  //   doContractCall({
-  //     network: new StacksTestnet(),
-  //     anchorMode: AnchorMode.Any,
-  //     contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
-  //     contractName: "btc-vote",
-  //     functionName: "vote",
-  //     functionArgs: [list(pick)],
-  //     postConditionMode: PostConditionMode.Deny,
-  //     postConditions: [],
-  //     onFinish: (data) => {
-  //       console.log("onFinish:", data);
-  //       window
-  //         .open(
-  //           `https://explorer.stacks.co/txid/${data.txId}?chain=testnet`,
-  //           "_blank"
-  //         )
-  //         .focus();
-  //     },
-  //     onCancel: () => {
-  //       console.log("onCancel:", "Transaction was canceled");
-  //     },
-  //   });
-  // }
+  function vote(pick) {
+    doContractCall({
+      network: new StacksTestnet(),
+      anchorMode: AnchorMode.Any,
+      contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
+      contractName: "btc-vote",
+      functionName: "vote",
+      functionArgs: [readUInt8(pick)],
+      postConditionMode: PostConditionMode.Deny,
+      postConditions: [],
+      onFinish: (data) => {
+        console.log("onFinish:", data);
+        window
+          .open(
+            `https://explorer.stacks.co/txid/${data.txId}?chain=testnet`,
+            "_blank"
+          )
+          .focus();
+      },
+      onCancel: () => {
+        console.log("onCancel:", "Transaction was canceled");
+      },
+    });
+  }
 
-  // function getColors() {
-  //   doContractCall({
-  //     network: new StacksTestnet(),
-  //     anchorMode: AnchorMode.Any,
-  //     contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
-  //     contractName: "btc-vote",
-  //     functionName: "get-colors",
-  //     functionArgs: [listCV],
-  //     postConditionMode: PostConditionMode.Deny,
-  //     postConditions: [],
-  //     onFinish: (data) => {
-  //       console.log("onFinish:", data);
-  //       window
-  //         .open(
-  //           `https://explorer.stacks.co/txid/${data.txId}?chain=testnet`,
-  //           "_blank"
-  //         )
-  //         .focus();
-  //     },
-  //     onCancel: () => {
-  //       console.log("onCancel:", "Transaction was canceled");
-  //     },
-  //   });
-  // }
+  function getColors() {
+    doContractCall({
+      network: new StacksTestnet(),
+      anchorMode: AnchorMode.Any,
+      contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
+      contractName: "btc-vote",
+      functionName: "get-colors",
+      functionArgs: [listCV],
+      postConditionMode: PostConditionMode.Deny,
+      postConditions: [],
+      onFinish: (data) => {
+        console.log("onFinish:", data);
+        window
+          .open(
+            `https://explorer.stacks.co/txid/${data.txId}?chain=testnet`,
+            "_blank"
+          )
+          .focus();
+      },
+      onCancel: () => {
+        console.log("onCancel:", "Transaction was canceled");
+      },
+    });
+  }
 
   const getTheColors = useCallback(async () => {
 
@@ -110,9 +113,9 @@ const ContractCallVote = () => {
     return null;
   }
 
-  // if (!mounted || !userSession.isUserSignedIn()) {
-  //   return null;
-  // }
+  if (!mounted || !userSession.isUserSignedIn()) {
+    return null;
+  }
 
   return (
     <div>
@@ -126,18 +129,18 @@ const ContractCallVote = () => {
         </div>  
     </div>
 
-      {/* <Container>
+      <Container>
         <CircularProgress value={50} color='green.400'>
           <CircularProgressLabel>50%</CircularProgressLabel>
         </CircularProgress>
-      </Container> */}
+      </Container>
 
       <br />
-{/* 
+
       <Button className="Vote" onClick={() => getTheColors("")}>
         GET
-      </Button> */}
-{/* 
+      </Button>
+
       <Button className="Vote" onClick={() => vote("")}>
         Yes
       </Button>
@@ -145,7 +148,7 @@ const ContractCallVote = () => {
 
       <Button className="Vote" onClick={() => vote("")}>
         No
-      </Button> */}
+      </Button>
 
     </div>
   );

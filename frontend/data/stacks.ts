@@ -9,8 +9,8 @@ import {
 
 import { useAuth, appDetails } from '../stores/useAuth'
 
-export const network = new StacksMocknet({
-  url: 'http://localhost:3999',
+export const network = new StacksTestnet({
+  url: '',
 })
 
 const ADDRESS = 'ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD'
