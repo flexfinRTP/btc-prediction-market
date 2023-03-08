@@ -4,6 +4,8 @@
 
 html,
 body {
+  background-color: #0e0216;
+  color: #FFFFFF;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -19,8 +21,30 @@ a {
   box-sizing: border-box;
 }
 
+p {
+  color: #FFFFFF;
+  font-size: 22px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+text.customText1 {
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: bolder;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+
 button.Connect,
 button.Vote {
+  color: #111;
+  font-size: 18px;
+  font-weight: bold;
+}
+button.Vote2 {
   color: #111;
   font-size: 18px;
   font-weight: bold;
@@ -28,23 +52,39 @@ button.Vote {
 
 button.Connect:hover,
 button.Vote:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
+  background-color: #7851a9;
+}
+button.Vote2:hover {
+  filter: brightness(1.2);
+  background-color: #7851a9;
 }
 
 button.Connect {
   margin: 8px;
-  background-color: #cdedff;
-  border: 2px solid #0026ff;
-  border-radius: 28px;
+  background-color: #FF9900;
+  border: 2px solid #7851a9;
+  border-radius: 24px;
   font-size: 18px;
-  padding: 16px 24px;
+  padding: 12px 20px;
+  color: #FFFFFF;
 }
 
 button.Vote {
-  background-color: rgba(148, 48, 148, 0.2);
-  border: 2px solid rgb(109, 29, 109);
-  color: rgb(100, 17, 21);
-  border-radius: 14px;
-  padding: 8px 12px;
+  background-color: #19A337;
+  border: 2px solid #7851a9;
+  color: #FFFFFF;
+  border-radius: 24px;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 4px;
+}
+button.Vote2 {
+  background-color: #FF0000;
+  border: 2px solid #7851a9;
+  color: #FFFFFF;
+  border-radius: 24px;
+  font-size: 18px;
+  padding: 10px 20px;
   margin: 4px;
 }

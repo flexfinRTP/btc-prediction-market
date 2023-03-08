@@ -5,6 +5,7 @@ import {
   Card,
   Container,
   Stack,
+  Flex,
   Text,
   Link,
   Button,
@@ -25,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>BitBully</title>
+        <title>₿itBully</title>
         <meta name="description" content="BitBully" />
         <link rel="icon" href="/favicon.ico" />
         <link href="/dist/output.css" rel="stylesheet" />
@@ -37,7 +38,7 @@ export default function Home() {
         </div>
 
 
-        <h1 className={styles.title}>BitBully</h1>
+        <h1 className={styles.title}>₿itBully</h1>
         <h1 className={styles.title}>Prediction Market</h1>
 
         <Container maxW="80%" centerContent>
@@ -55,17 +56,15 @@ export default function Home() {
           <br />
           <br />
           <Container maxW="50%" centerContent>
-            <Text fontSize="6xl" color="green.600" as="b">
-              Learn more about the BitBully Prediction Market!
-            </Text>
 
             <br />
-
+          <Flex>
             <Text fontSize="6xl" color="gray.800">
               Step into the world of high-stakes predictions and exhilarating
-              trades with BitBully, the Bitcoin prediction market that lets you
+              trades with ₿itBully, the Bitcoin prediction market that lets you
               bet on the future of the world's most popular cryptocurrency.
             </Text>
+            </Flex>
 
             <br />
             <br />

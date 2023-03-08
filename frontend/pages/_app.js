@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <Connect
       authOptions={{
         appDetails: {
-          name: "BTC Prediction Market",
+          name: "BitBully Prediction Market",
           icon,
         },
         redirectTo: "/",

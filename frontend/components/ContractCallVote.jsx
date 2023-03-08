@@ -130,8 +130,8 @@ const ContractCallVote = () => {
         </CircularProgress>
       </Container>
 
-      <Flex gap={20} py={10}>
-        <Button className="Vote" onClick={() => getTheColors("")}>
+      <Flex py={10}>
+        <Button className="Connect" onClick={() => getTheColors("")}>
           GET
         </Button>
 
@@ -139,7 +139,7 @@ const ContractCallVote = () => {
           Yes
         </Button>
 
-        <Button className="Vote" onClick={() => vote("")}>
+        <Button className="Vote2" onClick={() => vote("")}>
           No
         </Button>
       </Flex>

@@ -24,7 +24,7 @@ export default function Market() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>BitBully Prediction Market</title>
+        <title>₿itBully Prediction Market</title>
         <meta name="description" content="Bulldog Prediction Market" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -33,21 +33,12 @@ export default function Market() {
         <div>
           <Navbar />
         </div>
+        <Image src={BULL} alt="logo" width={200} height={200}></Image>
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <h1 className={styles.title}>BitBully</h1>
-        <br />
-        <h1 className={styles.title}>Prediction Market</h1>
-        <br />
-        <br />
-        <Image src={BULL} alt="logo" width={480} height={480}></Image>
-        <br />
-        <br /> <br />
         <br />
         <h2 className={styles.title} >Open Market</h2>
+        <br />
         <p>Vote Yes or No with your $BDOG tokens!</p>
         <div className={`${styles.grid} ${styles.alt}`}>
           <Card

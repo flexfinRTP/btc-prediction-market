@@ -17,16 +17,8 @@ export default function Footer() {
     <Box>
       <Box>
         <Container
-          as={Stack}
-          maxW={"6xl"}
-          py={4}
-          direction={{ base: "column", md: "row" }}
-          spacing={4}
-          justify={{ base: "center", md: "space-between" }}
-          align={{ base: "center", md: "center" }}
         >
-          <Text>© 2023 BitBully Prediction Market. All rights reserved</Text>
-          <Stack direction={"row"} spacing={6}></Stack>
+          <p>© 2023 ₿itBully Prediction Market. Built on Stacks</p>
         </Container>
       </Box>
     </Box>

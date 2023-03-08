@@ -3,6 +3,7 @@ import {
   Box,
   Flex,
   Link,
+  Image,
   Container,
   Button,
   Menu,
@@ -12,7 +13,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AppConfig, showConnect, UserSession } from "@stacks/connect";
-
+import styles from "../styles/Home.module.css";
+import BULL from "../public/bull.jpg";
 const appConfig = new AppConfig(["store_write", "publish_data"]);
 
 export const userSession = new UserSession({ appConfig });
@@ -42,27 +44,31 @@ const ConnectWallet = () => {
   if (mounted && userSession.isUserSignedIn()) {
     return (
       <div>
-        <Container maxW="80%" centerContent>
+        <Container maxW="100%" centerContent>
+          <Text alignText={"center"} as="b">
+            {userSession.loadUserData().profile.stxAddress.testnet}
+          </Text>
+
           <Button className="Connect" onClick={disconnect}>
             Disconnect Wallet
           </Button>
           <br />
+          
 
-          <Text alignText={'center'} as='b'>
+          {/* <Text alignText={'center'} as='b'>
             STX Mainnet: {userSession.loadUserData().profile.stxAddress.mainnet}
-          </Text>
-          <p alignText={'center'} as='b'>
-            STX Testnet: {userSession.loadUserData().profile.stxAddress.testnet}
-          </p>
+          </Text> */}
         </Container>
       </div>
     );
   }
 
   return (
-    <button className="Connect" onClick={authenticate}>
-      Connect Wallet
-    </button>
+    <Container maxW="100%" centerContent>
+      <button className="Connect" onClick={authenticate}>
+        Connect Wallet
+      </button>
+      </Container>
   );
 };
 
