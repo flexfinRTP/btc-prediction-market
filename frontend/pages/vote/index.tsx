@@ -1,6 +1,6 @@
-import { LastVote } from '../../components/LastVote'
-import { useColorVote } from '../../stores/useColorVote'
-import { Button } from '@chakra-ui/react';
+import { LastVote } from "../../components/LastVote";
+import { useColorVote } from "../../stores/useColorVote";
+import { Button } from "@chakra-ui/react";
 
 export const Vote = () => {
   const {
@@ -12,16 +12,16 @@ export const Vote = () => {
     sendVote,
     unvote,
     resetVote,
-  } = useColorVote()
+  } = useColorVote();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    sendVote()
-  }
+    e.preventDefault();
+    sendVote();
+  };
   const handleUnvote = (e) => {
-    e.preventDefault()
-    unvote()
-  }
+    e.preventDefault();
+    unvote();
+  };
 
   return (
     <>
@@ -30,9 +30,8 @@ export const Vote = () => {
         {colors ? (
           <form onSubmit={handleSubmit} onReset={resetVote} className="w-full">
             <div className="mt-6 flex justify-center gap-4">
-
               <Button type="submit" disabled={!isValid}>
-                {alreadyVoted ? 'Revote' : 'Vote'}
+                {alreadyVoted ? "Revote" : "Vote"}
               </Button>
 
               <Button type="reset">Empty form</Button>
@@ -50,5 +49,5 @@ export const Vote = () => {
 
       <LastVote />
     </>
-  )
-}
+  );
+};

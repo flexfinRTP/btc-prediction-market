@@ -12,7 +12,7 @@ import {
   makeStandardSTXPostCondition,
   FungibleConditionCode,
   listCV,
-  tupleCV
+  tupleCV,
 } from "@stacks/transactions";
 import {
   Box,
@@ -22,15 +22,21 @@ import {
   Link,
   Button,
   useColorModeValue,
-} from '@chakra-ui/react';
+  Flex,
+} from "@chakra-ui/react";
 import { userSession } from "./ConnectWallet";
-import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
-import { intCV, principalCV, stringAsciiCV, stringCV } from "micro-stacks/clarity";
+import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+import {
+  intCV,
+  principalCV,
+  stringAsciiCV,
+  stringCV,
+} from "micro-stacks/clarity";
 import { readUInt8, writeUInt32BE, writeUInt8 } from "micro-stacks/common";
 
 const ContractCallVote = () => {
   const { doContractCall } = useConnect();
-  const [ post, setPost ] = useState("");
+  const [post, setPost] = useState("");
 
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -42,7 +48,7 @@ const ContractCallVote = () => {
       contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
       contractName: "btc-vote",
       functionName: "vote",
-      functionArgs: [readUInt8(pick)],
+      functionArgs: [uintCV(pick)],
       postConditionMode: PostConditionMode.Deny,
       postConditions: [],
       onFinish: (data) => {
@@ -67,7 +73,7 @@ const ContractCallVote = () => {
       contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
       contractName: "btc-vote",
       functionName: "get-colors",
-      functionArgs: [listCV],
+      functionArgs: [listCV(getColors)],
       postConditionMode: PostConditionMode.Deny,
       postConditions: [],
       onFinish: (data) => {
@@ -86,16 +92,15 @@ const ContractCallVote = () => {
   }
 
   const getTheColors = useCallback(async () => {
-
     if (userSession.isUserSignedIn()) {
-      const userAddress = userSession.loadUserData().profile.stxAddress.testnet
+      const userAddress = userSession.loadUserData().profile.stxAddress.testnet;
       const options = {
-          contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
-          contractName: "btc-vote",
-          functionName: "get-colors",
-          network: new StacksTestnet(),
-          functionArgs: [standardPrincipalCV(userAddress)],
-          senderAddress: userAddress
+        contractAddress: "ST2Q0H9YA2GX020BW7SDFPEECJFDHVCZV7AJ1W1MD",
+        contractName: "btc-vote",
+        functionName: "get-colors",
+        network: new StacksTestnet(),
+        functionArgs: [standardPrincipalCV(userAddress)],
+        senderAddress: userAddress,
       };
 
       const result = await callReadOnlyFunction(options);
@@ -119,37 +124,25 @@ const ContractCallVote = () => {
 
   return (
     <div>
-
-    <div>
-        <div>
-          <h1>Get Colors 👋</h1>
-          <button className="Vote" onClick={() => getTheColors()}>
-            getColors
-          </button>
-        </div>  
-    </div>
-
-      <Container>
-        <CircularProgress value={50} color='green.400'>
+      <Container centerContent>
+        <CircularProgress value={50} color="green.400">
           <CircularProgressLabel>50%</CircularProgressLabel>
         </CircularProgress>
       </Container>
 
-      <br />
+      <Flex gap={20} py={10}>
+        <Button className="Vote" onClick={() => getTheColors("")}>
+          GET
+        </Button>
 
-      <Button className="Vote" onClick={() => getTheColors("")}>
-        GET
-      </Button>
+        <Button className="Vote" onClick={() => vote("")}>
+          Yes
+        </Button>
 
-      <Button className="Vote" onClick={() => vote("")}>
-        Yes
-      </Button>
-      
-
-      <Button className="Vote" onClick={() => vote("")}>
-        No
-      </Button>
-
+        <Button className="Vote" onClick={() => vote("")}>
+          No
+        </Button>
+      </Flex>
     </div>
   );
 };
