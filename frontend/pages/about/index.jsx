@@ -64,9 +64,7 @@ export default function About() {
             <Card>
               <p className={styles.customText1}>Decentralized Markets</p>
               <Text>
-                The prediction market should utilize a decentralized oracle
-                network to provide accurate and reliable data for resolving
-                prediction markets.
+              Decentralized oracle network will provide accurate and reliable data for resolving prediction markets.
               </Text>
             </Card>
 
@@ -75,9 +73,7 @@ export default function About() {
 
             <p className={styles.customText1}>User-Customized Markets</p>
             <Text>
-              The platform should allow users to create and customize their own
-              prediction markets based on any topic or event, incentivizing them
-              to create and participate in more prediction markets.
+            Users can create and customize their own prediction markets based on any topic or event, incentivizing them to create and participate in more prediction markets.
             </Text>
 
             <br />
@@ -85,9 +81,7 @@ export default function About() {
 
             <p className={styles.customText1}>Liquidity Incentives</p>
             <Text>
-              The platform should provide liquidity incentives to users who
-              provide liquidity to prediction markets, such as staking tokens or
-              providing collateral for prediction markets.
+            Liquidity incentives to users who provide liquidity to prediction markets, such as staking tokens or providing collateral for prediction markets.
             </Text>
 
             <br />
@@ -95,9 +89,7 @@ export default function About() {
 
             <p className={styles.customText1}>Token Incentives</p>
             <Text>
-              The platform should offer token incentives for users who correctly
-              predict the outcome of a prediction market, incentivizing them to
-              participate and make accurate predictions.
+            Token incentives for users who correctly predict the outcome of a prediction market, incentivizing them to participate and make accurate predictions.
             </Text>
 
             <br />
@@ -105,9 +97,7 @@ export default function About() {
 
             <p className={styles.customText1}>Gamification</p>
             <Text>
-              The prediction market should incorporate gamification elements to
-              make it more fun and engaging for users, such as leaderboards,
-              badges, and rewards for active participation.
+            Gamification elements makes it more fun and engaging for users, future features include leaderboards, badges, and rewards for active participation.
             </Text>
 
             <br />
