@@ -32,9 +32,9 @@ Gamification elements makes it more fun and engaging for users, future features 
 
 ## Screens
 
-![bull3](./bull3.png)
-![bitbully](./public/bitbully_btc.jpg)
-![bitbully2](./public/bitbully_btc2.jpg)
-![bitbully3](./public/bitbully_btc3.jpg)
-![btcvote](./public/btc-vote.jpg)
-![btcvote2](./public/btc-vote2.jpg)
+![bull3](./frontend/bull3.png)
+![bitbully](./frontend/public/bitbully_btc.jpg)
+![bitbully2](./frontend/public/bitbully_btc2.jpg)
+![bitbully3](./frontend/public/bitbully_btc3.jpg)
+![btcvote](./frontend/public/btc-vote.jpg)
+![btcvote2](./frontend/public/btc-vote2.jpg)
