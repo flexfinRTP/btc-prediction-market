@@ -37,4 +37,5 @@ Gamification elements makes it more fun and engaging for users, future features 
 ![bitbully2](./public/bitbully_btc2.jpg)
 ![bitbully3](./public/bitbully_btc3.jpg)
 ![btcvote](./public/btc-vote.jpg)
+![bitbully1](./public/btcbully1.jpg)
 ![btcvote2](./public/btc-vote2.jpg)
