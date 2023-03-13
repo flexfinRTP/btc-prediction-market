@@ -63,7 +63,7 @@ export default function Buy() {
             <Text fontSize="6xl" color="gray.800">
               Step into the world of high-stakes predictions and exhilarating
               trades with BitBully, the Bitcoin prediction market that lets you
-              bet on the future of the world's most popular cryptocurrency.
+              bet on the future with the world's most popular cryptocurrency.
             </Text>
 
             <br />
